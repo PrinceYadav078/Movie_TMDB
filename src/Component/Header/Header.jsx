@@ -32,6 +32,7 @@ const Header = () => {
         }else{
             setShow("top"); 
         }
+        setLastScrollY(window.scrollY)
     }
     useEffect(()=>{
         window.addEventListener("scroll", controlNavBar)
@@ -39,6 +40,8 @@ const Header = () => {
             window.removeEventListener("scroll",controlNavBar)
         }
     },[lastScrollY])
+
+
   const openSearch = () => {
     setShowSearch(true);
     setMobileMenu(false);
